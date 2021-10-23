@@ -21,9 +21,12 @@ function App() {
       <Router>
         {gameDates.map((gDate) => {
           return (
-            <div key={gDate!.id}>
-              <Link to={`/${gDate.year}${gDate.month}`}>
-                <GameDateBlock year={gDate.year} month={gDate.month} />
+            <div className="date-block" key={gDate!.id}>
+              <Link
+                to={`/${gDate.year}${gDate.month}`}
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                {gDate.year}年{gDate.month}月
               </Link>
             </div>
           );

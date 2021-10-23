@@ -1,5 +1,3 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import About from "./components/About";
 import Profile from "./components/Profile";
@@ -8,22 +6,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   return (
+    // TODO: delete class app
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <hr />
       <Router>
         <ul>
           <li>
@@ -42,7 +26,7 @@ function App() {
             <Link to="/profile/456">Profile 456</Link>
           </li>
         </ul>
-        <DateBlcok year={"2018"} month={"03"} />
+        <DateBlcok year={2018} month={3} />
         <hr />
         <Switch>
           <Route path="/about" exact component={About} />

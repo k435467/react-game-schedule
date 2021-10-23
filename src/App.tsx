@@ -1,54 +1,35 @@
 import "./App.css";
-import About from "./components/About";
-import Profile from "./components/Profile";
-import DateBlcok from "./components/gameDatesBlock";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AxiosResponse } from "axios";
+import IGameDate from "./lib/IGameDate";
+import GameDateBlock from "./components/GameDateBlock";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import GameBlocksContainer from "./components/GameBlocksContainer";
 
 function App() {
-  const axios = require("axios").default;
+  const [gameDates, setGameDates] = useState<IGameDate[]>([]);
 
   useEffect(() => {
+    const axios = require("axios").default;
     axios.get("/api/gameDates").then((res: AxiosResponse) => {
-      console.log(res.data);
+      setGameDates(res.data as IGameDate[]);
     });
-    // const fetchData = async () => {
-    //   const data = await fetch("/api/gameDates");
-    //   const json = await data.json();
-    //   console.log(json);
-    // };
-    // fetchData();
   }, []);
 
   return (
-    // TODO: delete class app
-    <div className="App">
+    <div>
       <Router>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/profile">Profile</Link>
-          </li>
-          <li>
-            <Link to="/123">Profile 123</Link>
-          </li>
-          <li>
-            <Link to="/profile/456">Profile 456</Link>
-          </li>
-        </ul>
-        <DateBlcok year={2018} month={3} />
-        <hr />
+        {gameDates.map((gDate) => {
+          return (
+            <div key={gDate!.id}>
+              <Link to={`/${gDate.year}${gDate.month}`}>
+                <GameDateBlock year={gDate.year} month={gDate.month} />
+              </Link>
+            </div>
+          );
+        })}
         <Switch>
-          <Route path="/about" exact component={About} />
-          <Route path="/profile" exact component={Profile} />
-          <Route path="/:id" component={Profile} />
-          <Route path="/profile/:id" exact component={Profile} />
+          <Route path="/:gameDateStr" component={GameBlocksContainer} />
         </Switch>
       </Router>
     </div>

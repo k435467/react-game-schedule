@@ -11,6 +11,7 @@ code {
 }
 
 .date-block {
+  margin: 5px;
   padding: 10px;
   border-radius: 10px;
   background-color: #371f4f;
@@ -18,15 +19,36 @@ code {
   width: fit-content;
 }
 
-.race-block {
+.game-block {
+  margin: 5px;
   padding: 10px;
   border-radius: 10px;
   color: white;
-  width: 500px;
+  width: 300px;
   background: linear-gradient(#322556, #272934);
 }
 
 .flex-space-between {
   display: flex;
   justify-content: space-between;
+}
+
+.container-has-2item {
+  display: flex;
+}
+
+.game-btn {
+  flex-grow: 1;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+  border-radius: 10px;
+}
+
+.red-bg {
+  background-color: #94263c;
+}
+
+.grey-bg {
+  background-color: #393b4f;
 }

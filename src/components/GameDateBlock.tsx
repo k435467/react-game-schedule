@@ -1,9 +1,9 @@
-interface gameDatesBlockProps {
+interface gameDateBlockProps {
   year: number;
   month: number;
 }
 
-export default function gameDatesBlock(props: gameDatesBlockProps) {
+export default function GameDateBlock(props: gameDateBlockProps) {
   const { year, month } = props;
   return (
     <div className="date-block">

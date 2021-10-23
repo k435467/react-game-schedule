@@ -1,10 +1,7 @@
 interface GameBlockProps {
-  month: number;
-  day: number;
-  dayOfWeek: string;
   time: string;
-  raceType: string;
-  local: string;
+  gameType: string;
+  location: string;
   team1: string;
   team1num: number;
   team2: string;

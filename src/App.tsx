@@ -1,10 +1,26 @@
 import "./App.css";
 import About from "./components/About";
 import Profile from "./components/Profile";
-import DateBlcok from "./components/DateBlock";
+import DateBlcok from "./components/gameDatesBlock";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useEffect } from "react";
+import { AxiosResponse } from "axios";
 
 function App() {
+  const axios = require("axios").default;
+
+  useEffect(() => {
+    axios.get("/api/gameDates").then((res: AxiosResponse) => {
+      console.log(res.data);
+    });
+    // const fetchData = async () => {
+    //   const data = await fetch("/api/gameDates");
+    //   const json = await data.json();
+    //   console.log(json);
+    // };
+    // fetchData();
+  }, []);
+
   return (
     // TODO: delete class app
     <div className="App">

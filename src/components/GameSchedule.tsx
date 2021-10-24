@@ -1,0 +1,45 @@
+import { useEffect, useState } from "react";
+import { AxiosResponse } from "axios";
+import IGameDate from "../lib/IGameDate";
+import GameDateBlocks from "./GameDateBlocks";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import GameBlocks from "./GameBlocks";
+
+export default function GameSchedule() {
+  const [gameDates, setGameDates] = useState<IGameDate[]>([]);
+
+  // ----------------
+  // Fetch game dates
+  // ----------------
+
+  useEffect(() => {
+    const axios = require("axios").default;
+    axios.get("/api/gameDates").then((res: AxiosResponse) => {
+      setGameDates(res.data as IGameDate[]);
+    });
+  }, []);
+
+  // ------
+  // Render
+  // ------
+
+  return (
+    <div>
+      <div className="title-container">
+        <div style={{ color: "white", fontSize: "30px" }}>賽程表</div>
+        <div style={{ color: "#b9babb", display: "flex" }}>
+          聯盟戰況
+          <div className="arrow-container">&gt;</div>
+        </div>
+      </div>
+      <Router>
+        <div style={{ paddingTop: "5px", paddingBottom: "10px" }}>
+          <GameDateBlocks dates={gameDates} />
+        </div>
+        <Switch>
+          <Route path="/:gameDateStr" component={GameBlocks} />
+        </Switch>
+      </Router>
+    </div>
+  );
+}

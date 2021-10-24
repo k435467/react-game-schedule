@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useRef, useState } from "react";
+import { useHistory } from "react-router-dom";
 import IGameDate from "../lib/IGameDate";
 import BreathingLight from "./BreathingLight";
 

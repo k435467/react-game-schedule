@@ -1,31 +1,20 @@
-import "./App.css";
-import { useEffect, useState } from "react";
-import { AxiosResponse } from "axios";
-import IGameDate from "./lib/IGameDate";
-import GameDateBlocks from "./components/GameDateBlocks";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import GameBlocks from "./components/GameBlocks";
+import GameSchedule from "./components/GameSchedule";
 
 function App() {
-  const [gameDates, setGameDates] = useState<IGameDate[]>([]);
-
-  useEffect(() => {
-    const axios = require("axios").default;
-    axios.get("/api/gameDates").then((res: AxiosResponse) => {
-      setGameDates(res.data as IGameDate[]);
-    });
-  }, []);
-
   return (
     <div>
-      <Router>
-        <div className="blocks-container">
-          <GameDateBlocks dates={gameDates} />
+      <div style={{ display: "flex", justifyContent: "space-between", padding: "20px" }}>
+        <div style={{ color: "white", flexGrow: 1, flexBasis: 0, fontSize: "24px" }}>
+          &lt;
         </div>
-        <Switch>
-          <Route path="/:gameDateStr" component={GameBlocks} />
-        </Switch>
-      </Router>
+        <div
+          style={{ color: "white", flexGrow: 10, textAlign: "center", fontSize: "24px" }}
+        >
+          新竹街口攻城獅
+        </div>
+        <div style={{ flexGrow: 1 }}></div>
+      </div>
+      <GameSchedule />
     </div>
   );
 }

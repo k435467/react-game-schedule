@@ -4,7 +4,9 @@ export default interface IGameInfo {
   gameType: string;
   location: string;
   team1: string;
-  team1num: number;
+  team1Num: number;
+  team1LogoUrl: string;
   team2: string;
-  team2num: number;
+  team2Num: number;
+  team2LogoUrl: string;
 }

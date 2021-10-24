@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import IGameDate from "../lib/IGameDate";
 import BreathingLight from "./BreathingLight";
 
@@ -14,6 +14,8 @@ export default function GameDateBlocks(props: GameDateBlocksProps) {
   // Drag to scroll the container
   //
   // https://htmldom.dev/drag-to-scroll/
+  //
+  // TODO: touchstart, touchmove, touchend
   // ----------------------------
 
   const containerEle = useRef<HTMLDivElement>(null);
@@ -59,28 +61,24 @@ export default function GameDateBlocks(props: GameDateBlocksProps) {
     }, 100);
   };
 
-  // useLocation
+  // --------------------------
+  // useLocation to get curPath
+  // --------------------------
 
-  // let location = useLocation();
-  // useEffect(() => {
-  //   console.log(location);
-  // }, [location]);
+  let location = useLocation();
+  const [curPath, setCurPath] = useState("/");
+  useEffect(() => {
+    setCurPath(location.pathname);
+  }, [location]);
 
   // ---------------------
   // Handle click to route
   // ---------------------
 
-  const [curId, setCurId] = useState(-1);
-  let curPath = "/";
   let history = useHistory();
   const handleClick = (date: IGameDate) => {
-    if (!isDragging) {
-      let nextPath = "/" + date.year.toString() + date.month.toString();
-      if (nextPath !== curPath) {
-        history.push(nextPath);
-        curPath = nextPath;
-        setCurId(date.id!);
-      }
+    if (!isDragging && curPath !== "/" + date.id!) {
+      history.push("/" + date.id!);
     }
   };
 
@@ -93,18 +91,18 @@ export default function GameDateBlocks(props: GameDateBlocksProps) {
       {dates.map((date) => {
         return (
           <div
-            className={`date-block ${date.id === curId ? "active-bg" : ""}`}
+            className={`date-block ${"/" + date.id === curPath ? "active-bg" : ""}`}
             key={date!.id}
             onClick={() => {
               handleClick(date);
             }}
           >
-            {date.id === curId && (
+            {"/" + date.id === curPath && (
               <div style={{ paddingRight: "10px" }}>
                 <BreathingLight />
               </div>
             )}
-            {date.year}年{date.month}月
+            {date.text}
           </div>
         );
       })}

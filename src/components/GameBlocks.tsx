@@ -22,6 +22,8 @@ export default function GameBlocks(props: RouteComponentProps<{ gameDateStr: str
   // Drag to scroll the container
   //
   // https://htmldom.dev/drag-to-scroll/
+  //
+  // TODO: touchstart, touchmove, touchend
   // ----------------------------
 
   const containerEle = useRef<HTMLDivElement>(null);
@@ -67,6 +69,24 @@ export default function GameBlocks(props: RouteComponentProps<{ gameDateStr: str
     }, 100);
   };
 
+  // ----------------
+  // Handle click buy
+  // ----------------
+
+  const handleClickBuy = (
+    gameId: number,
+    gameTime: string,
+    e: React.MouseEvent<HTMLElement>
+  ) => {
+    let strArr = gameTime.split(" ");
+    let out = {
+      gameId: gameId,
+      date: strArr[0],
+      time: strArr[2],
+    };
+    alert(JSON.stringify(out));
+  };
+
   // ------
   // Render
   // ------
@@ -88,20 +108,30 @@ export default function GameBlocks(props: RouteComponentProps<{ gameDateStr: str
               <div className="flex-space-between">
                 <div style={{ display: "flex" }}>
                   <div className="team-img-container">
-                    <img src="/logo3.png" alt="logo" height={"100%"} draggable="false" />
+                    <img
+                      src={game.team1LogoUrl}
+                      alt="logo"
+                      height={"100%"}
+                      draggable="false"
+                    />
                   </div>
                   <div className="vertical-center-container bold-text">{game.team1}</div>
                 </div>
-                <div className="vertical-center-container bold-text">{game.team1num}</div>
+                <div className="vertical-center-container bold-text">{game.team1Num}</div>
               </div>
               <div className="flex-space-between">
                 <div style={{ display: "flex" }}>
                   <div className="team-img-container">
-                    <img src="/logo4.png" alt="logo" height={"100%"} draggable="false" />
+                    <img
+                      src={game.team2LogoUrl}
+                      alt="logo"
+                      height={"100%"}
+                      draggable="false"
+                    />
                   </div>
                   <div className="vertical-center-container bold-text">{game.team2}</div>
                 </div>
-                <div className="vertical-center-container bold-text">{game.team2num}</div>
+                <div className="vertical-center-container bold-text">{game.team2Num}</div>
               </div>
             </div>
 
@@ -118,8 +148,8 @@ export default function GameBlocks(props: RouteComponentProps<{ gameDateStr: str
               </div>
               <div
                 className="game-btn red-bg"
-                onClick={() => {
-                  alert("click 購票");
+                onClick={(event) => {
+                  handleClickBuy(game.id!, game.time, event);
                 }}
               >
                 購票

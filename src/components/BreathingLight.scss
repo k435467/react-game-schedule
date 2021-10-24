@@ -1,31 +1,31 @@
-$from-color: #371f4f;
-$to-color: #71279e;
+$from-color: #71279e;
+$to-color: #371f4f;
 
 @-webkit-keyframes blinking {
   from {
     background-color: $from-color;
-    box-shadow: 0 0 30px $from-color;
-    width: 5px;
-    height: 5px;
+    box-shadow: 0 0 100px $from-color;
   }
 
   to {
     background-color: $to-color;
-    box-shadow: 0 0 100px $to-color;
+    box-shadow: 0 0 30px $to-color;
+    width: 5px;
+    height: 5px;
   }
 }
 
 @keyframes blinking {
   from {
     background-color: $from-color;
-    box-shadow: 0 0 30px $from-color;
-    width: 8px;
-    height: 8px;
+    box-shadow: 0 0 100px $from-color;
   }
 
   to {
     background-color: $to-color;
-    box-shadow: 0 0 100px $to-color;
+    box-shadow: 0 0 30px $to-color;
+    width: 5px;
+    height: 5px;
   }
 }
 
@@ -35,13 +35,13 @@ div.light {
 
   border-radius: 50%;
 
-  -webkit-animation-duration: 3s;
+  -webkit-animation-duration: 2s;
   -webkit-animation-name: blinking;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
   -webkit-animation-timing-function: ease-in-out;
 
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-name: blinking;
   animation-iteration-count: infinite;
   animation-direction: alternate;

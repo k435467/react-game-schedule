@@ -1,66 +1,178 @@
 {
   "gameDates": [
-    { "id": 1, "year": 2020, "month": 12 },
-    { "id": 2, "year": 2021, "month": 1 },
-    { "id": 3, "year": 2021, "month": 2 },
-    { "id": 4, "year": 2021, "month": 3 }
+    { "id": "2021-1", "text": "2021年1月" },
+    { "id": "2021-2", "text": "2021年2月" },
+    { "id": "2021-3-1-8", "text": "2021年3月1-8日" },
+    { "id": "2021-3-9-16", "text": "2021年3月9-16日" },
+    { "id": "2021-3-17", "text": "2021年3月17日" },
+    { "id": "2021-4-18", "text": "2021年4月18日" }
   ],
-  "202012": [
-    {
-      "id": 1,
-      "time": "12月13日 (六) 15:30",
-      "gameType": "例行賽",
-      "location": "桃園市立綜合體育館",
-      "team1": "新竹街口攻城獅",
-      "team1num": 112,
-      "team2": "臺北富邦勇士",
-      "team2num": 105
-    },
-    {
-      "id": 2,
-      "time": "12月14日 (日) 15:30",
-      "gameType": "例行賽",
-      "location": "桃園市立綜合體育館",
-      "team1": "新竹街口攻城獅",
-      "team1num": 102,
-      "team2": "福爾摩斯勇士",
-      "team2num": 110
-    }
-  ],
-  "20211": [
+  "2021-1": [
     {
       "id": 1,
       "time": "1月13日 (六) 15:30",
       "gameType": "例行賽",
       "location": "桃園市立綜合體育館",
       "team1": "新竹街口攻城獅",
-      "team1num": 112,
+      "team1Num": 112,
+      "team1LogoUrl": "/logo3.png",
       "team2": "臺北富邦勇士",
-      "team2num": 105
+      "team2Num": 105,
+      "team2LogoUrl": "/logo4.png"
+    },
+    {
+      "id": 2,
+      "time": "1月14日 (日) 15:30",
+      "gameType": "例行賽",
+      "location": "桃園市立綜合體育館",
+      "team1": "新竹街口攻城獅",
+      "team1Num": 102,
+      "team1LogoUrl": "/logo3.png",
+      "team2": "福爾摩斯勇士",
+      "team2Num": 110,
+      "team2LogoUrl": "/logo4.png"
     }
   ],
-  "20212": [
+  "2021-2": [
     {
       "id": 1,
       "time": "2月13日 (六) 15:30",
       "gameType": "例行賽",
       "location": "桃園市立綜合體育館",
       "team1": "新竹街口攻城獅",
-      "team1num": 112,
+      "team1Num": 112,
+      "team1LogoUrl": "/logo3.png",
       "team2": "臺北富邦勇士",
-      "team2num": 105
-    }
-  ],
-  "20213": [
+      "team2Num": 105,
+      "team2LogoUrl": "/logo4.png"
+    },
     {
-      "id": 1,
-      "time": "3月13日 (六) 15:30",
+      "id": 2,
+      "time": "2月14日 (日) 15:30",
       "gameType": "例行賽",
       "location": "桃園市立綜合體育館",
       "team1": "新竹街口攻城獅",
-      "team1num": 112,
+      "team1Num": 102,
+      "team1LogoUrl": "/logo3.png",
+      "team2": "福爾摩斯勇士",
+      "team2Num": 110,
+      "team2LogoUrl": "/logo4.png"
+    }
+  ],
+  "2021-3-1-8": [
+    {
+      "id": 1,
+      "time": "3月1日 (六) 15:30",
+      "gameType": "例行賽",
+      "location": "桃園市立綜合體育館",
+      "team1": "新竹街口攻城獅",
+      "team1Num": 112,
+      "team1LogoUrl": "/logo3.png",
       "team2": "臺北富邦勇士",
-      "team2num": 105
+      "team2Num": 105,
+      "team2LogoUrl": "/logo4.png"
+    },
+    {
+      "id": 2,
+      "time": "3月3日 (日) 15:30",
+      "gameType": "例行賽",
+      "location": "桃園市立綜合體育館",
+      "team1": "新竹街口攻城獅",
+      "team1Num": 102,
+      "team1LogoUrl": "/logo3.png",
+      "team2": "福爾摩斯勇士",
+      "team2Num": 110,
+      "team2LogoUrl": "/logo4.png"
+    },
+    {
+      "id": 3,
+      "time": "3月6日 (六) 15:30",
+      "gameType": "例行賽",
+      "location": "桃園市立綜合體育館",
+      "team1": "新竹街口攻城獅",
+      "team1Num": 112,
+      "team1LogoUrl": "/logo3.png",
+      "team2": "臺北富邦勇士",
+      "team2Num": 105,
+      "team2LogoUrl": "/logo4.png"
+    },
+    {
+      "id": 4,
+      "time": "3月8日 (六) 15:30",
+      "gameType": "例行賽",
+      "location": "桃園市立綜合體育館",
+      "team1": "新竹街口攻城獅",
+      "team1Num": 112,
+      "team1LogoUrl": "/logo3.png",
+      "team2": "臺北富邦勇士",
+      "team2Num": 105,
+      "team2LogoUrl": "/logo4.png"
+    }
+  ],
+  "2021-3-9-16": [
+    {
+      "id": 1,
+      "time": "3月9日 (六) 15:30",
+      "gameType": "例行賽",
+      "location": "桃園市立綜合體育館",
+      "team1": "新竹街口攻城獅",
+      "team1Num": 112,
+      "team1LogoUrl": "/logo3.png",
+      "team2": "臺北富邦勇士",
+      "team2Num": 105,
+      "team2LogoUrl": "/logo4.png"
+    },
+    {
+      "id": 2,
+      "time": "3月16日 (日) 15:30",
+      "gameType": "例行賽",
+      "location": "桃園市立綜合體育館",
+      "team1": "新竹街口攻城獅",
+      "team1Num": 102,
+      "team1LogoUrl": "/logo3.png",
+      "team2": "福爾摩斯勇士",
+      "team2Num": 110,
+      "team2LogoUrl": "/logo4.png"
+    }
+  ],
+  "2021-3-17": [
+    {
+      "id": 1,
+      "time": "3月17日 (六) 15:30",
+      "gameType": "例行賽",
+      "location": "桃園市立綜合體育館",
+      "team1": "新竹街口攻城獅",
+      "team1Num": 112,
+      "team1LogoUrl": "/logo3.png",
+      "team2": "臺北富邦勇士",
+      "team2Num": 105,
+      "team2LogoUrl": "/logo4.png"
+    }
+  ],
+  "2021-4-18": [
+    {
+      "id": 1,
+      "time": "4月18日 (六) 15:30",
+      "gameType": "例行賽",
+      "location": "桃園市立綜合體育館",
+      "team1": "新竹街口攻城獅",
+      "team1Num": 112,
+      "team1LogoUrl": "/logo3.png",
+      "team2": "臺北富邦勇士",
+      "team2Num": 105,
+      "team2LogoUrl": "/logo4.png"
+    },
+    {
+      "id": 2,
+      "time": "4月18日 (日) 15:30",
+      "gameType": "例行賽",
+      "location": "桃園市立綜合體育館",
+      "team1": "新竹街口攻城獅",
+      "team1Num": 102,
+      "team1LogoUrl": "/logo3.png",
+      "team2": "福爾摩斯勇士",
+      "team2Num": 110,
+      "team2LogoUrl": "/logo4.png"
     }
   ]
 }

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import IGameDate from "../lib/IGameDate";
+import BreathingLight from "./BreathingLight";
 
 interface GameDateBlocksProps {
   dates: IGameDate[];
@@ -60,10 +61,10 @@ export default function GameDateBlocks(props: GameDateBlocksProps) {
 
   // useLocation
 
-  let location = useLocation();
-  useEffect(() => {
-    console.log(location);
-  }, [location]);
+  // let location = useLocation();
+  // useEffect(() => {
+  //   console.log(location);
+  // }, [location]);
 
   // ---------------------
   // Handle click to route
@@ -98,6 +99,11 @@ export default function GameDateBlocks(props: GameDateBlocksProps) {
               handleClick(date);
             }}
           >
+            {date.id === curId && (
+              <div style={{ paddingRight: "10px" }}>
+                <BreathingLight />
+              </div>
+            )}
             {date.year}年{date.month}月
           </div>
         );

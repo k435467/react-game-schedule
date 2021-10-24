@@ -19,6 +19,8 @@ code {
   background-color: #2f3140;
   color: white;
   font-weight: 500;
+  display: flex;
+  align-items: center;
 }
 
 .active-bg {

@@ -1,9 +1,12 @@
+import "./GameInfoBlocks.css";
 import { AxiosResponse } from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import IGameInfo from "../lib/IGameInfo";
 
-export default function GameBlocks(props: RouteComponentProps<{ gameDateStr: string }>) {
+export default function GameInfoBlocks(
+  props: RouteComponentProps<{ gameDateStr: string }>
+) {
   const gameDateStr = props.match.params.gameDateStr;
 
   const [games, setGames] = useState<IGameInfo[]>([]);

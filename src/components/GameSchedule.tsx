@@ -1,9 +1,10 @@
+import "./GameSchedule.css";
 import { useEffect, useState } from "react";
 import { AxiosResponse } from "axios";
 import IGameDate from "../lib/IGameDate";
 import GameDateBlocks from "./GameDateBlocks";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import GameBlocks from "./GameBlocks";
+import GameInfoBlocks from "./GameInfoBlocks";
 
 export default function GameSchedule() {
   const [gameDates, setGameDates] = useState<IGameDate[]>([]);
@@ -37,7 +38,7 @@ export default function GameSchedule() {
           <GameDateBlocks dates={gameDates} />
         </div>
         <Switch>
-          <Route path="/:gameDateStr" component={GameBlocks} />
+          <Route path="/:gameDateStr" component={GameInfoBlocks} />
         </Switch>
       </Router>
     </div>

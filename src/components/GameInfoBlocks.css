@@ -1,0 +1,65 @@
+.blocks-container {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.game-block {
+  flex-shrink: 0;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  width: 300px;
+  background: linear-gradient(#322556, #201f2d, #272934);
+}
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-btn {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.red-bg {
+  background-color: #94263c;
+}
+
+.grey-bg {
+  background-color: #393b4f;
+}
+
+.secondary-text {
+  font-size: small;
+  color: #a7a5af;
+}
+
+.padding-y {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.vertical-center-container {
+  display: flex;
+  align-items: center;
+}
+
+.bold-text {
+  font-weight: 500;
+}
+
+.team-img-container {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  padding-right: 10px;
+}

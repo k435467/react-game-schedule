@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import IGameDate from "../lib/IGameDate";
 
 interface GameDateBlocksProps {
@@ -57,6 +57,13 @@ export default function GameDateBlocks(props: GameDateBlocksProps) {
       isDragging = false;
     }, 100);
   };
+
+  // useLocation
+
+  let location = useLocation();
+  useEffect(() => {
+    console.log(location);
+  }, [location]);
 
   // ---------------------
   // Handle click to route

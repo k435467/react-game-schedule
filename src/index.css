@@ -18,7 +18,7 @@ code {
   border-radius: 10px;
   background-color: #2f3140;
   color: white;
-  width: fit-content;
+  font-weight: 500;
 }
 
 .active-bg {
@@ -38,7 +38,7 @@ code {
 .blocks-container {
   width: 100%;
   display: flex;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .flex-space-between {
@@ -62,4 +62,31 @@ code {
 
 .grey-bg {
   background-color: #393b4f;
+}
+
+.secondary-text {
+  font-size: small;
+  color: #a7a5af;
+}
+
+.padding-y {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.vertical-center-container {
+  display: flex;
+  align-items: center;
+}
+
+.bold-text {
+  font-weight: 500;
+}
+
+.team-img-container {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  padding-right: 10px;
 }

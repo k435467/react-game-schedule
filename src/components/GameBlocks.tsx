@@ -78,37 +78,52 @@ export default function GameBlocks(props: RouteComponentProps<{ gameDateStr: str
           <div key={game.id} className="game-block">
             <div className="flex-space-between">
               <span>{game.time}</span>
-              <span>{game.gameType}</span>
+              <span className="secondary-text">{game.gameType}</span>
             </div>
-            <span>{game.location}</span>
-            <div className="flex-space-between">
-              <p>{game.team1}</p>
-              <p>{game.team1num}</p>
-            </div>
-            <div className="flex-space-between">
-              <p>{game.team2}</p>
-              <p>{game.team2num}</p>
+            <span className="secondary-text">{game.location}</span>
+
+            {/* Teams */}
+
+            <div className="padding-y">
+              <div className="flex-space-between">
+                <div style={{ display: "flex" }}>
+                  <div className="team-img-container">
+                    <img src="/logo3.png" alt="logo" height={"100%"} draggable="false" />
+                  </div>
+                  <div className="vertical-center-container bold-text">{game.team1}</div>
+                </div>
+                <div className="vertical-center-container bold-text">{game.team1num}</div>
+              </div>
+              <div className="flex-space-between">
+                <div style={{ display: "flex" }}>
+                  <div className="team-img-container">
+                    <img src="/logo4.png" alt="logo" height={"100%"} draggable="false" />
+                  </div>
+                  <div className="vertical-center-container bold-text">{game.team2}</div>
+                </div>
+                <div className="vertical-center-container bold-text">{game.team2num}</div>
+              </div>
             </div>
 
             {/* Bottom buttons */}
 
             <div style={{ display: "flex", width: "100%" }}>
-              <span
+              <div
                 className="game-btn grey-bg"
                 onClick={() => {
                   alert("click 查看詳情");
                 }}
               >
                 查看詳情
-              </span>
-              <span
+              </div>
+              <div
                 className="game-btn red-bg"
                 onClick={() => {
                   alert("click 購票");
                 }}
               >
                 購票
-              </span>
+              </div>
             </div>
           </div>
         );

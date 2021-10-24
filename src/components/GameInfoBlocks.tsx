@@ -72,6 +72,50 @@ export default function GameInfoBlocks(
     }, 100);
   };
 
+  // -----------
+  // Touch Event
+  // -----------
+
+  const touchStartHandler = (e: React.TouchEvent<HTMLElement>) => {
+    if (containerEle.current) {
+      pos = {
+        // The current scroll
+        left: containerEle.current.scrollLeft,
+        // Get the current mouse pos
+        x: e.touches[0].clientX,
+      };
+      containerEle.current.addEventListener("touchmove", touchMoveHandler);
+      containerEle.current.addEventListener("touchend", touchEndHandler);
+      // Change the cursor and prevent user from selecting the text
+      containerEle.current.style.cursor = "grabbing";
+      containerEle.current.style.userSelect = "none";
+    }
+  };
+  const touchMoveHandler = (e: TouchEvent) => {
+    // How far the mouse has been moved
+    const dx = e.touches[0].clientX - pos.x;
+    // If moved enough distance then dragging
+    if (Math.abs(dx) > 10) {
+      isDragging = true;
+    }
+    // Scroll the element
+    if (containerEle.current && isDragging) {
+      containerEle.current.scrollLeft = pos.left - dx;
+    }
+  };
+  const touchEndHandler = (e: TouchEvent) => {
+    if (containerEle.current) {
+      containerEle.current.removeEventListener("touchmove", touchMoveHandler);
+      containerEle.current.removeEventListener("touchend", touchEndHandler);
+      containerEle.current.style.removeProperty("cursor");
+      containerEle.current.style.removeProperty("user-select");
+    }
+    // delay off dragging for prevent triggering handleClick
+    setTimeout(() => {
+      isDragging = false;
+    }, 100);
+  };
+
   // ----------------
   // Handle click buy
   // ----------------
@@ -95,7 +139,12 @@ export default function GameInfoBlocks(
   // ------
 
   return (
-    <div className="blocks-container" ref={containerEle} onMouseDown={mouseDownHandler}>
+    <div
+      className="blocks-container"
+      ref={containerEle}
+      onMouseDown={mouseDownHandler}
+      onTouchStart={touchStartHandler}
+    >
       {games.map((game) => {
         return (
           <div key={game.id} className="game-block">

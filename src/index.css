@@ -12,13 +12,17 @@ code {
 }
 
 .date-block {
-  display: inline-block;
+  flex-shrink: 0;
   margin: 5px;
   padding: 10px;
   border-radius: 10px;
-  background-color: #371f4f;
+  background-color: #2f3140;
   color: white;
   width: fit-content;
+}
+
+.active-bg {
+  background-color: #371f4f;
 }
 
 .game-block {

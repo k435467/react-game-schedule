@@ -2,9 +2,9 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { AxiosResponse } from "axios";
 import IGameDate from "./lib/IGameDate";
-import GameDateBlock from "./components/GameDateBlock";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import GameBlocksContainer from "./components/GameBlocksContainer";
+import GameDateBlocks from "./components/GameDateBlocks";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import GameBlocks from "./components/GameBlocks";
 
 function App() {
   const [gameDates, setGameDates] = useState<IGameDate[]>([]);
@@ -19,20 +19,11 @@ function App() {
   return (
     <div>
       <Router>
-        {gameDates.map((gDate) => {
-          return (
-            <div className="date-block" key={gDate!.id}>
-              <Link
-                to={`/${gDate.year}${gDate.month}`}
-                style={{ color: "white", textDecoration: "none" }}
-              >
-                {gDate.year}年{gDate.month}月
-              </Link>
-            </div>
-          );
-        })}
+        <div className="blocks-container">
+          <GameDateBlocks dates={gameDates} />
+        </div>
         <Switch>
-          <Route path="/:gameDateStr" component={GameBlocksContainer} />
+          <Route path="/:gameDateStr" component={GameBlocks} />
         </Switch>
       </Router>
     </div>

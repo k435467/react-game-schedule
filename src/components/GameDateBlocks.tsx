@@ -15,8 +15,6 @@ export default function GameDateBlocks(props: GameDateBlocksProps) {
   // Drag to scroll the container
   //
   // https://htmldom.dev/drag-to-scroll/
-  //
-  // TODO: touchstart, touchmove, touchend
   // ----------------------------
 
   const containerEle = useRef<HTMLDivElement>(null);
@@ -31,7 +29,8 @@ export default function GameDateBlocks(props: GameDateBlocksProps) {
         x: e.clientX,
       };
       containerEle.current.addEventListener("mousemove", mouseMoveHandler);
-      containerEle.current.addEventListener("mouseup", mouseUpHandler);
+      // containerEle.current.addEventListener("mouseup", mouseUpHandler);
+      window.addEventListener("mouseup", mouseUpHandler);
       // Change the cursor and prevent user from selecting the text
       containerEle.current.style.cursor = "grabbing";
       containerEle.current.style.userSelect = "none";
@@ -52,7 +51,8 @@ export default function GameDateBlocks(props: GameDateBlocksProps) {
   const mouseUpHandler = (e: MouseEvent) => {
     if (containerEle.current) {
       containerEle.current.removeEventListener("mousemove", mouseMoveHandler);
-      containerEle.current.removeEventListener("mouseup", mouseUpHandler);
+      // containerEle.current.removeEventListener("mouseup", mouseUpHandler);
+      window.removeEventListener("mouseup", mouseUpHandler);
       containerEle.current.style.removeProperty("cursor");
       containerEle.current.style.removeProperty("user-select");
     }
@@ -75,7 +75,8 @@ export default function GameDateBlocks(props: GameDateBlocksProps) {
         x: e.touches[0].clientX,
       };
       containerEle.current.addEventListener("touchmove", touchMoveHandler);
-      containerEle.current.addEventListener("touchend", touchEndHandler);
+      // containerEle.current.addEventListener("touchend", touchEndHandler);
+      window.addEventListener("touchend", touchEndHandler);
       // Change the cursor and prevent user from selecting the text
       containerEle.current.style.cursor = "grabbing";
       containerEle.current.style.userSelect = "none";
@@ -96,7 +97,8 @@ export default function GameDateBlocks(props: GameDateBlocksProps) {
   const touchEndHandler = (e: TouchEvent) => {
     if (containerEle.current) {
       containerEle.current.removeEventListener("touchmove", touchMoveHandler);
-      containerEle.current.removeEventListener("touchend", touchEndHandler);
+      // containerEle.current.removeEventListener("touchend", touchEndHandler);
+      window.removeEventListener("touchend", touchEndHandler);
       containerEle.current.style.removeProperty("cursor");
       containerEle.current.style.removeProperty("user-select");
     }

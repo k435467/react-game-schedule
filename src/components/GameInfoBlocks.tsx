@@ -7,7 +7,7 @@ import IGameInfo from "../lib/IGameInfo";
 export default function GameInfoBlocks(
   props: RouteComponentProps<{ gameDateStr: string }>
 ) {
-  const gameDateStr = props.match.params.gameDateStr;
+  let gameDateStr = props.match.params.gameDateStr;
 
   const [games, setGames] = useState<IGameInfo[]>([]);
 

@@ -1,3 +1,5 @@
+// https://htmldom.dev/drag-to-scroll/
+
 // DOM 事件傳遞機制：捕獲與冒泡、事件代理
 // https://hackmd.io/@Heidi-Liu/note-fe201-dom
 
@@ -12,8 +14,8 @@ export interface IPosAndFlag {
   isDragging: boolean; // distinguish drag and click
 }
 
-let mouseUpHandlerWrapper: (event: MouseEvent) => void;
 let mouseMoveHandlerWrapper: (event: MouseEvent) => void;
+let mouseUpHandlerWrapper: (event: MouseEvent) => void;
 
 // ----------------
 // mouseDownHandler

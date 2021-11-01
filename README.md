@@ -1,5 +1,13 @@
 # react-race-schedule
 
+A game schedule.
+
+- React
+- TypeScript
+- React Router
+- Json-Server for a fake backend
+- Scroll dates or shedule on drag
+
 ## Usage
 
 ### Run

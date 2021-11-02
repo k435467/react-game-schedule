@@ -10,7 +10,7 @@ A game schedule.
 - TypeScript
 - React Router
 - Json-Server for a fake backend
-- Scroll dates or shedule on drag
+- Scroll dates or schedule on drag
 
 ## Usage
 

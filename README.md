@@ -2,6 +2,10 @@
 
 A game schedule.
 
+<p align="center">
+  <img src="screenshot/screenshot.png" width="300">
+</p>
+
 - React
 - TypeScript
 - React Router

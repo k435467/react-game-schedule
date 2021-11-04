@@ -15,7 +15,7 @@ export default function GameSchedule() {
 
   useEffect(() => {
     const axios = require("axios").default;
-    axios.get("/api/gameDates").then((res: AxiosResponse) => {
+    axios.get(process.env.API_URL + "/api/gameDates").then((res: AxiosResponse) => {
       setGameDates(res.data as IGameDate[]);
     });
   }, []);

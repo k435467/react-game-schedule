@@ -18,7 +18,7 @@ export default function GameInfoBlocks(
     // Fetch data
     // ----------
     const axios = require("axios").default;
-    axios.get(`/api/${gameDateStr}`).then((res: AxiosResponse) => {
+    axios.get(process.env.API_URL + "/api/" + gameDateStr).then((res: AxiosResponse) => {
       setGames(res.data as IGameInfo[]);
     });
   }, [gameDateStr]);

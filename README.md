@@ -1,6 +1,6 @@
 # react-race-schedule
 
-A game schedule.
+A game schedule. The vercel branch for deployment.
 
 <p align="center">
   <img src="screenshot/screenshot.png" width="300">

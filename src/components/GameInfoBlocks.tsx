@@ -17,10 +17,13 @@ export default function GameInfoBlocks(
     // ----------
     // Fetch data
     // ----------
-    const axios = require("axios").default;
-    axios.get(process.env.API_URL + "/api/" + gameDateStr).then((res: AxiosResponse) => {
-      setGames(res.data as IGameInfo[]);
-    });
+    if (process.env.API_URL) {
+      const axios = require("axios").default;
+      const url: string = process.env.API_URL;
+      axios.get(url + "/api/" + gameDateStr).then((res: AxiosResponse) => {
+        setGames(res.data as IGameInfo[]);
+      });
+    }
   }, [gameDateStr]);
 
   // ----------------------------

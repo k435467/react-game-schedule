@@ -14,10 +14,13 @@ export default function GameSchedule() {
   // ----------------
 
   useEffect(() => {
-    const axios = require("axios").default;
-    axios.get(process.env.API_URL + "/api/gameDates").then((res: AxiosResponse) => {
-      setGameDates(res.data as IGameDate[]);
-    });
+    if (process.env.API_URL) {
+      const axios = require("axios").default;
+      const url: string = process.env.API_URL;
+      axios.get(url + "/api/gameDates").then((res: AxiosResponse) => {
+        setGameDates(res.data as IGameDate[]);
+      });
+    }
   }, []);
 
   // ------

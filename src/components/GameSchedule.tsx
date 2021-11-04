@@ -14,13 +14,11 @@ export default function GameSchedule() {
   // ----------------
 
   useEffect(() => {
-    if (process.env.API_URL) {
-      const axios = require("axios").default;
-      const url: string = process.env.API_URL;
-      axios.get(url + "/api/gameDates").then((res: AxiosResponse) => {
-        setGameDates(res.data as IGameDate[]);
-      });
-    }
+    const axios = require("axios").default;
+    const url: string = "https://vercel-api-mauve-two.vercel.app"; // process.env.API_URL
+    axios.get(url + "/api/gameDates").then((res: AxiosResponse) => {
+      setGameDates(res.data as IGameDate[]);
+    });
   }, []);
 
   // ------

@@ -17,13 +17,11 @@ export default function GameInfoBlocks(
     // ----------
     // Fetch data
     // ----------
-    if (process.env.API_URL) {
-      const axios = require("axios").default;
-      const url: string = process.env.API_URL;
-      axios.get(url + "/api/" + gameDateStr).then((res: AxiosResponse) => {
-        setGames(res.data as IGameInfo[]);
-      });
-    }
+    const axios = require("axios").default;
+    const url: string = "https://vercel-api-mauve-two.vercel.app"; // process.env.API_URL
+    axios.get(url + "/api/" + gameDateStr).then((res: AxiosResponse) => {
+      setGames(res.data as IGameInfo[]);
+    });
   }, [gameDateStr]);
 
   // ----------------------------
